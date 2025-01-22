@@ -1,0 +1,74 @@
+/* Login and Signup Page Styles */
+@import url(/CarRental/css/CR.css);
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 800px;
+}
+
+.form-box {
+    background-color: var(--container-color);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--tittle-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--first-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--body-color);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition:0.3s;
+}
+
+button:hover {
+    background-color: var(--first-color-alt);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    background-color: burlywood;
+    border-radius: 2rem;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}

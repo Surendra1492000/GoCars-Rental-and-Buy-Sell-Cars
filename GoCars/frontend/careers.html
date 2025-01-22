@@ -1,0 +1,227 @@
+<!-- <!DOCTYPE html>
+<html lang="en"> -->
+
+<!-- <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Page | GoCars</title> -->
+    <!-- Favicon -->
+    <!-- <link rel="icon" href="/images/favicon.png" type="image/png"> -->
+    <!-- Stylesheet -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <!-- Icon Library -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<!-- </head> -->
+
+<!-- <body> -->
+    <!-- HEADER SECTION -->
+    <!-- <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav_logo">
+                <i class="ri-roadster-line"></i> GoCars
+            </a>
+            <div class="nav_menu" id="nav-menu">
+                <ul class="nav_list">
+                    <li><a href="index.html" class="nav_link">Home</a></li>
+                    <li><a href="cars.html" class="nav_link">Cars</a></li>
+                    <li><a href="contact.html" class="nav_link">Contact</a></li>
+                    <li><a href="newpage.html" class="nav_link active-link">New Page</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header> -->
+
+    <!-- MAIN SECTION -->
+    <!-- <main>
+        <section class="section" id="new-section">
+            <div class="container">
+                <h2 class="section-tittle">Welcome to the New Page</h2>
+                <p class="section-desc">This is a placeholder for new content. Customize this section with your desired content, features, and style.</p>
+            </div>
+        </section>
+    </main> -->
+
+    <!-- FOOT
+-->
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoCars</title>
+    <!-- favicon -->
+    <link rel="icon" href="/CarRental/images/favicon.png" type="image/png">
+     <!-- SWIPER CSS -->
+      <link rel="stylesheet" href="CSS/swiper-bundle.min.css">
+
+    <!-- remix-icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- main-css -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/CR.css">
+</head>
+<body>
+    <!-- Header-Section -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="" class="nav_logo">
+                <i class="ri-roadster-line"></i>
+                Go-Cars
+            </a>
+            <div class="nav_menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav_item">
+                        <a href="home.html" class="nav_link">Home</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="about.html" class="nav_link">About</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="popular.html" class="nav_link">Popular</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="products.html" class="nav_link">Products</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="app.html" class="nav_link download_link">Download</a>
+                    </li>
+                </ul>
+                <div class="nav_close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-2-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section id="job-openings">
+        <h2>Current Job Openings</h2>
+        <div class="job-listing">
+            <h3>Software Engineer</h3>
+            <p><strong>Location:</strong> Remote</p>
+            <p><strong>Type:</strong> Full-Time</p>
+            <p><strong>Responsibilities:</strong></p>
+            <ul>
+                <li>Develop and maintain web applications.</li>
+                <li>Collaborate with the design and product teams.</li>
+                <li>Write clean, efficient, and scalable code.</li>
+            </ul>
+            <p><strong>Requirements:</strong></p>
+            <ul>
+                <li>Proficiency in JavaScript, HTML, and CSS.</li>
+                <li>Experience with React or Angular.</li>
+                <li>Strong problem-solving skills.</li>
+            </ul>
+            <button><a href="">Apply Now</a></button>
+        </div>
+
+        <div class="job-listing">
+            <h3>Marketing Specialist</h3>
+            <p><strong>Location:</strong> New York, NY</p>
+            <p><strong>Type:</strong> Full-Time</p>
+            <p><strong>Responsibilities:</strong></p>
+            <ul>
+                <li>Plan and execute marketing campaigns.</li>
+                <li>Analyze campaign performance and suggest improvements.</li>
+                <li>Work with cross-functional teams to promote products.</li>
+            </ul>
+            <p><strong>Requirements:</strong></p>
+            <ul>
+                <li>Bachelor's degree in Marketing or a related field.</li>
+                <li>Strong knowledge of digital marketing strategies.</li>
+                <li>Excellent communication skills.</li>
+            </ul>
+            <button><a href="#apply">Apply Now</a></button>
+        </div>
+    </section>
+
+    <section id="apply">
+        <h2>How to Apply</h2>
+        <p>We’re excited to hear from you! Please fill out the form below to apply for any of our open positions.</p>
+        <form action="/submit-application" method="post">
+            <label for="name">Full Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email Address:</label><br>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="position">Position Applied For:</label><br>
+            <select id="position" name="position" required>
+                <option value="software-engineer">Software Engineer</option>
+                <option value="marketing-specialist">Marketing Specialist</option>
+                <option value="other">Other</option>
+            </select><br>
+
+            <label for="resume">Upload Your Resume:</label><br>
+            <input type="file" id="resume" name="resume" required><br>
+
+            <label for="message">Additional Message (Optional):</label><br>
+            <textarea id="message" name="message" rows="5"></textarea><br>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </section>
+
+    <!-- FOOTER-SECTION -->
+    <footer class="footer section">
+        <div class="container footer_contain">
+            <div class="footer-data grid">
+                <div class="logo-info footer-box"> <a href="" class="nav_logo">
+                    <i class="ri-roadster-line"></i>
+                    GoCars
+                </a>
+                <p class="footer-desc">
+                    GoCars is a luxury car rental and sales company that offers a wide range of high-end vehicles for
+                </p>
+                </div>
+                <div class="information footer-box">
+                    <h3 class="footer__tittle">Information</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="company footer-box">
+                    <h3 class="footer__tittle">Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact-us</a></li>
+                        <li><a href="#">GoCars Media</a></li>
+                    </ul>
+                </div>
+                <div class="socials footer-box">
+                    <h3 class="footer__tittle">Follow Us On</h3>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/vividh-jain"><i class="ri-linkedin-box-fill"></i>Linkedin</a></li>
+                        <li><a href="https://www.instagram.com/"><i class="ri-instagram-fill"></i>Instagram</a></li>
+                        <li><a href="#"><i class="ri-twitter-fill"></i>Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="footer-line"></div>
+                <small>&copy; JustPrefect. All rights reserved.</small>
+            </div>
+        </div>
+      </footer>
+    </main>
+    <!-- Scroll-Up Button -->
+     <a href="#" class="scrollup" id="scroll-up">Scroll-Up
+        <i class="ri-arrow-up-line"></i>
+     </a>
+     <!--Scroll-Reveal-Js-->
+     <script src="Js/scrollreveal.min.js"></script>
+    <!-- SWIPER JS -->
+     <script src="Js/swiper-bundle.min.js"></script>
+       <!-- MIXITUP-JS -->
+       <script src="Js/mixitup.min.js"></script>
+    <!-- Java-script Sections Below -->
+    <script src="Js/car.js"></script>
+</body>
+</html>

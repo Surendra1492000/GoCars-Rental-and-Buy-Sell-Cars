@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoCars</title>
+    <!-- favicon -->
+    <!-- <link rel="icon" href="/CarRental/images/favicon.png" type="image/png"> -->
+     <!-- SWIPER CSS -->
+      <!-- <link rel="stylesheet" href="CSS/swiper-bundle.min.css"> -->
+
+    <!-- remix-icon -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" /> -->
+    <!-- main-css -->
+    <!-- <link rel="stylesheet" href="css/login&sign-up.css"> -->
+    <!-- <link rel="stylesheet" href="css/CR.css">
+    <link rel="stylesheet" href="CSS/styles.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <script src="Js/script.js" defer></script> New JavaScript file -->
+    <link rel="stylesheet" href="/frontend/CSS/logins.css">
+
+</head>
+<body>
+    <!-- Header-Section -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="" class="nav_logo">
+                <i class="ri-roadster-line"></i>
+                Go-Cars
+            </a>
+            <div class="nav_menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav_item">
+                        <a href="home.html" class="nav_link">Home</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="about.html" class="nav_link">About</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="popular.html" class="nav_link">Popular</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="products.html" class="nav_link">Products</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="login.html" class="nav_link">Login</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="app.html" class="nav_link download_link">Download</a>
+                    </li>
+                </ul>
+                <div class="nav_close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-2-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- <div class="container">
+        <div class="form-container">
+            <div class="form-box">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="email" id="email" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="signup.html">Sign up here</a>.</p>
+                <div class="social-icons">
+                    <a href="https://in.linkedin.com/"><i class="ri-linkedin-box-fill"></i></a>
+                    <a href="https://www.instagram.com/"><i class="ri-instagram-fill"></i></a>
+                    <a href="https://x.com/"><i class="ri-twitter-fill"></i></a>
+                    <a href="https://www.google.com/"><i class="ri-google-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="wrapper">
+        <span class="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
+
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label >Email</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label >Password</label>
+                </div>
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox">
+                    Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">
+                    Login
+                </button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label >Username</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label >Email</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label >Password</label>
+                </div>
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox">
+                    I agree to the term & conditions
+                </label>
+                </div>
+                <button type="submit" class="btn">
+                    Register
+                </button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="register-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="/frontend/Js/login.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- FOOTER-SECTION -->
+    <footer class="footer section">
+        <div class="container footer_contain">
+            <div class="footer-data grid">
+                <div class="logo-info footer-box"> <a href="" class="nav_logo">
+                    <i class="ri-roadster-line"></i>
+                    GoCars
+                </a>
+                <p class="footer-desc">
+                    GoCars is a luxury car rental and sales company that offers a wide range of high-end vehicles for
+                </p>
+                </div>
+                <div class="information footer-box">
+                    <h3 class="footer__tittle">Information</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="company footer-box">
+                    <h3 class="footer__tittle">Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="#">Contact-us</a></li>
+                        <li><a href="#">GoCars Media</a></li>
+                    </ul>
+                </div>
+                <div class="socials footer-box">
+                    <h3 class="footer__tittle">Follow Us On</h3>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/vividh-jain"><i class="ri-linkedin-box-fill"></i>Linkedin</a></li>
+                        <li><a href="https://www.instagram.com/"><i class="ri-instagram-fill"></i>Instagram</a></li>
+                        <li><a href="#"><i class="ri-twitter-fill"></i>Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="footer-line"></div>
+                <small>&copy; JustPrefect. All rights reserved.</small>
+            </div>
+        </div>
+      </footer>
+    </main>
+    <!-- Scroll-Up Button -->
+     <!-- <a href="#" class="scrollup" id="scroll-up">Scroll-Up
+        <i class="ri-arrow-up-line"></i>
+     </a> -->
+     <!--Scroll-Reveal-Js-->
+     <!-- <script src="Js/scrollreveal.min.js"></script> -->
+    <!-- SWIPER JS -->
+     <!-- <script src="Js/swiper-bundle.min.js"></script> -->
+       <!-- MIXITUP-JS -->
+       <!-- <script src="Js/mixitup.min.js"></script> -->
+    <!-- Java-script Sections Below -->
+    <!-- <script src="Js/car.js"></script> -->
+    <script>
+        function closePopup() {
+            document.querySelector('.popup-container').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+

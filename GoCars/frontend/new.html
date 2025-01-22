@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gocars</title>
+
+  <style>
+    /* Ensure logos are contained within their containers */
+    .cars-brand img {
+      height: 2rem;
+      /* Fixed height for all screens */
+      width: 3rem;
+      /* Fixed width for all screens */
+      object-fit: contain;
+      /* Ensure logos fit within the box */
+    }
+
+    /* Adjust logo size for different screen sizes */
+    .logo-img {
+      max-width: 3rem;
+      /* Default size for large screens */
+      height: auto;
+      /* Maintain aspect ratio */
+    }
+
+    @media (max-width: 576px) {
+      .logo-img {
+        max-width: 2rem;
+        /* Smaller size for extra small screens */
+      }
+    }
+
+    @media (min-width: 576px) and (max-width: 767px) {
+      .logo-img {
+        max-width: 2.5rem;
+        /* Slightly larger size for small screens */
+      }
+    }
+
+    
+    .service-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card img {
+            object-fit: cover;
+            height: 180px;
+        }
+
+        .service-card .card-body {
+            text-align: center;
+        }
+
+        .service-card .btn {
+            color: #ff6600;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            text-decoration: underline;
+        }
+  </style>
+
+
+</head>
+
+<body>
+
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-white sticky-top border-bottom customshadow">
+    <div class="container p-1">
+      <!-- Include flash messages if necessary -->
+      
+
+  
+      <!-- Logo -->
+      <a href="/" class="navbar-brand">
+        <img class="m-0" style="width: 120px;" src="/images/images-removebg-preview.png" alt="">
+      </a>
+  
+      <!-- Toggler button for mobile view -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Navbar content -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
+  
+          <!-- Location dropdown -->
+          
+          <li class="nav-item">
+            <a type="button" onclick="handleArrow()" class="d-flex align-items-center gap-2 bg-light rounded-1 p-2 nav-link text-black mx-4"
+              data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+              </svg>
+              <h6 class="m-0 text-center">Location</h6>
+              <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+              </svg>
+            </a>
+          </li>
+          
+  
+          <!-- Navigation Links -->
+          <div class="d-flex flex-wrap align-items-center gap-3 ms-lg-5">
+            <li class="nav-item navmouseover ">
+              <a class="nav-link text-black" href="/buyusedcar"><h6>Buy used cars</h6></a>
+            </li>
+            <li class="nav-item navmouseover ">
+              <a class="nav-link text-black" href="/sellcar"><h6>Sell cars</h6></a>
+            </li>
+          </div>
+        </ul>
+  
+        <!-- User dropdown and account links -->
+        <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center gap-2">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-black d-flex align-items-center gap-2" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+              </svg>
+              <div>
+                <h6 class="mb-1 custonFs">Hello, Sign in</h6>
+                Account
+              </div>
+            </a>
+            <ul class="dropdown-menu text-center p-2" aria-labelledby="navbarDropdown">
+              
+              <li class="p-1">
+                <a type="button" class="btn btn-warning row" data-bs-toggle="modal" data-bs-target="#newModal">
+                  LOGIN/SIGN UP
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+
+  <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered ">
+      <div class="modal-content border-0 rounded-4">
+        <div class="modal-header ">
+          <h5 class="modal-title" id="exampleModalLabel">Location</h5>
+          <button type="button" class="btn-close" onclick="handleArrowClose()" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body  ">
+          <div class="row mb-2">
+            <div class="col-12 d-flex justify-content-center gap-3 text-center flex-wrap">
+              <div class="btn-group ">
+                <button type="button" class="btn px-5 btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Select Your City
+                </button>
+                <ul class="dropdown-menu dropdown-menu-lg  w-100 p-2 custom-scroll">
+                  <li><a class="cityName dropdown-item" onclick="changelocationName(this)"
+                    href="/locationName?city=Kolkata&page=/">Kolkata</a></li>
+                <li><a class="cityName dropdown-item" onclick="changelocationName(this)"
+                    href="/locationName?city=New%20Delhi&page=/">New Delhi</a></li>
+                <li><a class="cityName dropdown-item" onclick="changelocationName(this)"
+                    href="/locationName?city=Bengaluru&page=/">Bengaluru</a></li>
+                <li><a class="cityName dropdown-item" onclick="changelocationName(this)"
+                    href="/locationName?city=Mumbai&page=/">Mumbai</a></li>
+                <li><a class="cityName dropdown-item" onclick="changelocationName(this)"
+                    href="/locationName?city=Hyderabad&page=/">Hyderabad</a></li>
+                </ul>
+              </div>
+              <form action="/locationLangLong" method="post" id="locationForm">
+                <input type="hidden" name="latitude" id="latitude">
+                <input type="hidden" name="longitude" id="longitude">
+            
+                <button type="button" class="btn btn-warning px-4" id="locationButton">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-crosshair" viewBox="0 0 16 16">
+                    <path d="M8.5.5a.5.5 0 0 0-1 0v.518A7 7 0 0 0 1.018 7.5H.5a.5.5 0 0 0 0 1h.518A7 7 0 0 0 7.5 14.982v.518a.5.5 0 0 0 1 0v-.518A7 7 0 0 0 14.982 8.5h.518a.5.5 0 0 0 0-1h-.518A7 7 0 0 0 8.5 1.018zm-6.48 7A6 6 0 0 1 7.5 2.02v.48a.5.5 0 0 0 1 0v-.48a6 6 0 0 1 5.48 5.48h-.48a.5.5 0 0 0 0 1h.48a6 6 0 0 1-5.48 5.48v-.48a.5.5 0 0 0-1 0v.48A6 6 0 0 1 2.02 8.5h.48a.5.5 0 0 0 0-1zM8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
+                  </svg> Use Current Location
+                </button>
+            </form>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="px-2 px-sm-4 py-3 row g-4">
+            <h6>Popular cities</h6>
+  
+            <div class="container mt-4">
+              <div id="formContainer" class=" d-flex flex-column flex-md-row gap-3 gap-md-5 flex-wrap justify-content-center justify-content-md-start">
+                <!-- Forms will be dynamically inserted here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content rounded-5 overflow-hidden">
+        <div class="modal-body p-0 row">
+          <!-- Image Column -->
+          <div class="col-12 col-md-6 p-0 d-none d-lg-block">
+            <img class="img-fluid w-100 h-100" src="https://cdn.pixabay.com/photo/2020/09/06/07/37/car-5548242_1280.jpg" alt="">
+          </div>
+  
+          <!-- Form Column -->
+          <div class="col-12 col-md-6 d-flex align-items-center p-2">
+            <form id="accountForm" class="form-container w-100" action="/users/signup" method="post">
+              <div class="text-end m-2">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+  
+              <h3 class="heading text-start">SignUp</h3>
+              <div class="divider m-0"></div>
+              <input type="text" placeholder="Name" name="name" class="nameFeild w-100 mb-3" required>
+              <input type="email" placeholder="Email" name="email" class="w-100 mb-3" required>
+              <input type="password" placeholder="Password" name="password" class="w-100 mb-3" required>
+              <a href="/users/forgetpassword" class="forgetpassword text-end text-decoration-none d-none">Forgot Password?</a>
+              <input type="hidden" name="page" value="/">
+              <button class="heading btn btn-warning p-3 rounded-5 w-100 " type="submit">Submit</button>
+  
+              <div class="d-flex flex-column gap-1">
+                <p class="formText d-flex align-items-center justify-content-center p-0 m-0">
+                  Already Registered?
+                  <button type="button" onclick="hideNamefeild(this)" class="btn btn-link text-decoration-none p-0">LOGIN</button>
+                </p>
+                <p class="text-center p-0 mb-2 m-0">OR</p>
+                <a class="nav-link border border-dark rounded-5 p-3 d-flex align-items-center justify-content-center gap-2"
+                   href="https://gocars.site/users/auth">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                    <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"/>
+                  </svg>
+                  <p class="m-0">Continue with Google</p>
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="/javascripts/main.js"></script>
+
+  <script>
+    // Array of objects with image URLs and location names
+    const locations = [
+      {
+        imgSrc: 'https://deih43ym53wif.cloudfront.net/small_Rajpath-delhi-shutterstock_1195751923.jpg_7647e1aad2.jpg',
+        locationName: 'New Delhi'
+      },
+      {
+        imgSrc: 'https://cdn.britannica.com/91/110191-050-7BCFD56B/Victoria-Memorial-Hall-Kolkata-India.jpg',
+        locationName: 'Kolkata'
+      },
+      {
+        imgSrc: 'https://i.natgeofe.com/n/41769731-51c3-445d-85c7-d9668ecf3ba0/SleepMumbai3.jpg?w=1280&h=853',
+        locationName: 'Mumbai'
+      },
+      {
+        imgSrc: 'https://i.kinja-img.com/image/upload/c_fill,h_900,q_60,w_1600/1432fedb88c0d1cc56f4c496a80f251c.jpg',
+        locationName: 'Bengaluru'
+      },
+      {
+        imgSrc: 'https://lp-cms-production.imgix.net/2019-06/GettyImages-171676147_full.jpg?fit=crop&ar=1%3A1&w=1200&auto=format&q=75',
+        locationName: 'Hyderabad'
+      },
+      {
+        imgSrc: 'https://cdn.abhibus.com/2024/02/Things-to-Do-in-Lucknow.jpg',
+        locationName: 'Lucknow'
+      },
+      {
+        imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuDD8CIjBDuVukV24jBDSDnW6-DUu3qrzpeQ&s',
+        locationName: 'Jaipur'
+      },
+      
+      
+      // Add more locations as needed
+    ];
+
+    const formContainer = document.getElementById('formContainer');
+
+    // Function to render forms dynamically
+    function renderForms() {
+      locations.forEach(location => {
+        const form = document.createElement('form');
+        form.action = '/locationName';
+        form.method = 'post';
+
+        form.innerHTML = `
+          <button onclick="Onchecked(this)" class="border-0 bg-transparent p-0" type="submit">
+            <div class="card hover custom-card border-dark rounded-4 overflow-hidden">
+              <img src="${location.imgSrc}" class="card-img-top img-fluid" alt="${location.locationName}">
+              <div class="card-body">
+                <input type="hidden" name="page" value="/">
+                <input type="hidden" value="${location.locationName}" name="locationName">
+                <p class="text-center mb-0 locationName">${location.locationName}</p>
+              </div>
+            </div>
+          </button>
+        `;
+
+        formContainer.appendChild(form);
+      });
+    }
+
+    // Call the function to render the forms
+    renderForms();
+
+  // Get the form and button elements
+  const form = document.getElementById('locationForm');
+  const button = document.getElementById('locationButton');
+
+  // Add an event listener to the button's click event
+  button.addEventListener('click', function(event) {
+    // Prevent the default form action
+    event.preventDefault();
+
+    // Check if geolocation is available
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        // Set the hidden input fields with the latitude and longitude
+        document.getElementById('latitude').value = position.coords.latitude;
+        document.getElementById('longitude').value = position.coords.longitude;
+
+        console.log("Location retrieved: ", position.coords.latitude, position.coords.longitude);
+
+        // After setting the latitude and longitude, submit the form
+        form.submit();
+      }, (error) => {
+        console.error("Error retrieving location:", error);
+        alert("Unable to retrieve location. Please enable location services.");
+      });
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  });
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
+    <main class="position-relative">
+      <div class="hero-img">
+        <!-- Large image for medium and larger screens -->
+        <img src="/images/hero.jpg" class="img-fluid d-none d-md-block" alt="Hero Image">
+
+        <!-- Smaller image for small screens -->
+        <img src="/images/hero.jpg" class="img-fluid d-md-none" style="object-fit:cover;" alt="Hero Image Small">
+      </div>
+
+
+      <div class="over-img w-100 rounded-5 p-2 z-2 bg-transparent position-absolute start-50 translate-middle-x">
+        <div class="d-flex w-75 m-auto px-1 border border-2 p-md-2 bg-light align-items-center gap-1 rounded-5">
+          <svg class="mx-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+            class="bi bi-search " viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+          </svg>
+          <form action="/buyusedcar" class="w-100">
+            <input type="search" name="search" placeholder="Search cars by name"
+              class="p-2 bg-light w-100 rounded-5 border-0" id="searchFilter" list="carSuggestions">
+            <datalist id="carSuggestions"></datalist>
+          </form>
+        </div>
+
+        <div class="cars-brand d-flex flex-wrap gap-2 gap-md-4 gap-lg-5 justify-content-center mt-3 mt-md-4">
+          <img src="images/logo1.png" alt="Logo 1" class="img-fluid logo-img d-none d-md-block">
+          <img src="images/logo2.png" alt="Logo 2" class="img-fluid logo-img d-none d-md-block" >
+          <img src="images/logo5.png" alt="Kia Logo" class="img-fluid logo-img d-none d-md-block" >
+          <img src="images/logo6.png" alt="Mahindra Logo" class="img-fluid logo-img d-none d-md-block" >
+          <img src="images/logo3.png" alt="Logo 3" class="img-fluid logo-img d-none d-lg-block">
+          <img src="images/logo4.png" alt="Logo 4" class="img-fluid logo-img d-none d-md-block" >
+          <img src="https://i.pinimg.com/originals/5b/ac/94/5bac942d02e70ce67498bf2ff04efe97.png" alt=""
+            class="img-fluid logo-img d-none d-md-block" >
+          <img src="https://cdn.pixabay.com/photo/2016/08/15/18/18/honda-1596081_1280.png" alt="Honda Logo"
+            class="img-fluid logo-img d-none d-md-block" >
+        </div>
+      </div>    
+
+    </main>
+
+    <div class="container my-5 w-75">
+      <h2 class="text-center mb-4">Our services</h2>
+      <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-md-3">
+              <div class="card service-card">
+                  <img src="https://media.assettype.com/evoindia%2F2020-10%2Faffec770-297e-470a-9ed3-b8f19f01dfb7%2FVolkswagen_Polo_and_Vento.jpg?rect=0%2C80%2C1280%2C720&w=1024&auto=format%2Ccompress&fit=max" class="card-img-top" alt="Buy used cars">
+                  <div class="card-body">
+                      <h5 class="card-title fw-bold fs-4">Buy used cars</h5>
+                      <p class="card-text">Affordable pre-loved cars</p>
+                      <a href="/buyusedcar" class="btn">Know more →</a>
+                  </div>
+              </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-md-3">
+              <div class="card service-card position-relative">
+                  <span class="badge rounded-5 bg-dark position-absolute top-0 end-0 m-2">Coming Soon</span>
+                  <img src="https://media.cars24.com/india/cms/prod/banners/root/2024/07/25/83cc3d65-d59e-4b54-a7eb-805335918b33-SELL.webp" class="card-img-top" alt="Sell car">
+                  <div class="card-body">
+                      <h5 class="card-title fw-bold fs-4">Sell car</h5>
+                      <p class="card-text">Sell fast, stress-free</p>
+                      <a href="/sellcar" class="btn">Know more →</a>
+                  </div>
+              </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-md-3">
+              <div class="card service-card position-relative">
+                  <span class="badge rounded-5 bg-dark position-absolute top-0 end-0 m-2">Coming Soon</span>
+                  <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" class="card-img-top" alt="Car loan">
+                  <div class="card-body">
+                      <h5 class="card-title fw-bold fs-4">Car loan</h5>
+                      <p class="card-text">Low rates, fast approval</p>
+                      <a href="#" class="btn disabled border-0">Know more →</a>
+                  </div>
+              </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="col-md-3">
+              <div class="card service-card position-relative">
+                  <span class="badge rounded-5 bg-dark position-absolute top-0 end-0 m-2">Coming Soon</span>
+                  <img src="https://media.cars24.com/india/cms/prod/banners/root/2024/07/25/dfc02025-cdaa-4917-8dd7-f5dd30c50ee5-Hire-driver.webp" class="card-img-top" alt="Hire driver">
+                  <div class="card-body">
+                      <h5 class="card-title fw-bold fs-4">Hire driver</h5>
+                      <p class="card-text">Expert drivers on demand</p>
+                      <a href="#" class="btn disabled border-0">Know more →</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="container my-5 w-75">
+    <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            1. What should I check before buying a used car?
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Inspect the car's condition, review the service history, and test drive it. Verify all documents, including ownership and registration papers.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            2. Can I return the car if I am not satisfied after purchase?
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Some sellers offer a return policy within a specific period. Confirm the return window and any applicable conditions before finalizing the purchase.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            3. Can I finance a used car, and what are the loan terms?
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Financing options are available for used cars, with terms depending on the car and your credit. Interest rates and down payments may vary, so review all options.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            4. How do I know if the price of the used car is fair?
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Compare the car’s price with similar vehicles in the market. Consider factors like age, condition, and mileage to assess if the price is reasonable.</div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+  
+
+
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+    <!-- Bootstrap 5 Footer -->
+    <footer class=" py-4 border mt-5 d-flex justify-content-center">
+        <div class="container w-75">
+            <div class="row d-flex justify-content-around ">
+
+                <!-- Left: Company Logo and Copyright -->
+                <div class="col-md-4 col-12 text-md-start text-center mb-4 mb-md-0">
+                    <a href="/" class="navbar-brand">
+                        <img class="mb-4" style="width: 150px;" src="/images/images-removebg-preview.png" alt="">
+                    </a>
+                    <p class="mb-0">© 2024 Company, Inc. All rights reserved.</p>
+                    <!-- Social Media Icons: Placed in the same row -->
+                    <div class="col-md-12 col-12 d-flex justify-content-md-start justify-content-center mt-3">
+                        <a href="https://instagram.com" target="_blank" class="nav-link me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="nav-link me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                class="bi bi-facebook" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                class="bi bi-twitter" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.286 3.286 0 0 0 1.017 4.384A3.269 3.269 0 0 1 .64 6.575v.041a3.286 3.286 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115c-.211 0-.417-.019-.617-.057a3.29 3.29 0 0 0 3.065 2.279A6.586 6.586 0 0 1 .78 13.58a9.288 9.288 0 0 0 5.026 1.466" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: 2 Columns with Links and Social Media -->
+                <div class="col-md-8 col-12 ">
+                    <div class="row ">
+
+                        <!-- Column 1: Links -->
+                        <div class="col-md-6 col-12 mb-3 mb-md-0 text-center ">
+                            <ul class="list-unstyled">
+                                <p class="h4">Company</p>
+                                <li><a href="/buyusedcar" class="footer-link nav-link d-inline">Buy Used Car</a></li>
+                                <li><a href="/sellcar" class="footer-link nav-link d-inline">Sell Car</a></li>
+                                <li><a href="/contactus" class="footer-link nav-link d-inline">Contact Us</a></li>
+                                <li><a href="/aboutus" class="footer-link nav-link d-inline">About Us</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 2: Links -->
+                        <div class="col-md-6 col-12 mb-3 mb-md-0 text-center text-md-end">
+                            <ul class="list-unstyled">
+                                <p class="h4">Get Help !</p>
+
+                                <li><a href="#" class="footer-link nav-link d-inline" data-bs-toggle="modal"
+                                        data-bs-target="#refundPolicyModal">Refund Policy</a></li>
+                                <li><a href="#" class="footer-link nav-link d-inline" data-bs-toggle="modal"
+                                        data-bs-target="#termsConditionModal">Terms & Conditions</a></li>
+                                <li><a href="#" class="footer-link nav-link d-inline" data-bs-toggle="modal"
+                                    data-bs-target="#privacyPolicyModal">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal 1 -->
+    <div class="modal fade" id="refundPolicyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Refund Policy for GoCars</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>At GoCars, we strive to provide clarity regarding our services. <strong>Please note the following
+                            details about our refund policy:</strong>
+
+                    <p>Test Drive Booking Fee: To schedule a test drive at home, <strong>customers are required to pay a
+                            non-refundable fee of ₹499 at the time of booking</strong>. This fee secures your slot for
+                        the test drive service.</p>
+
+                    <p>*No Other Monetary Transactions: This website does not engage in any financial transactions for
+                        services other than the home test drive. <strong>We do not collect or process payments for
+                            vehicle purchases or any other services</strong>.</p>
+
+                    By using our service, you acknowledge and accept this refund policy. If you have any questions or
+                    concerns, please feel free to reach out to our customer service team.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="termsConditionModal" tabindex="-1" aria-labelledby="termsConditionModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Terms and Conditions for GoCars</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                    <p>
+                        1. Acceptance: By using the GoCars website and services, you agree to these Terms and
+                        Conditions.
+                    </p>
+
+                    <p>
+                        2. Service Overview: GoCars offers home test drives for vehicles. We do not facilitate online
+                        car purchases.
+                    </p>
+
+                    <p>
+                        3. Booking and Payment: A non-refundable fee of ₹499 is required to book a test drive at home.
+                    </p>
+
+                    <p>Payment is processed securely, and no financial information is stored by GoCars.</p>
+                    <p>
+                        4. Responsibilities
+                        Customers must provide accurate information, arrive on time for their test drive, and possess a
+                        valid driver's license.
+                    </p>
+
+                    <p>
+                        5. Liability
+                        GoCars is not liable for any damages or injuries during the test drive.
+                    </p>
+
+                    <p>
+                        6. Changes
+                        GoCars may modify these terms at any time. Continued use of our services indicates acceptance of
+                        changes.
+                    </p>
+
+                    <p>
+                        7. Contact
+                        For questions, please contact our customer service team.
+                    </p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Modal 3 -->
+     <div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">GoCars Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        1. Introduction
+                        GoCars is committed to protecting your privacy. This policy outlines how we collect, use, and safeguard your information.
+                    </p>
+                    
+                    <p>
+                        2. Information We Collect
+                        We collect personal information such as your name and contact details when you book a test drive. This data is used to provide our services effectively.
+                    </p>
+                    
+                    <p>
+                        3. Use of Information
+                        Your personal information is used solely for scheduling test drives, processing payments, and improving our services. We do not share or sell your data to third parties.
+                    </p>
+                    
+                    <p>
+                        4. Payment Security
+                        We use secure payment gateways, and no financial information is stored on our servers.
+                    </p>
+                    
+                    <p>
+                        5. Cookies
+                        Our website uses cookies to enhance user experience. You can disable cookies in your browser settings, but it may affect website functionality.
+                    </p>
+                    
+                    <p>
+                        6. Data Protection
+                        We implement strict security measures to protect your data. However, no system is completely secure, and we cannot guarantee absolute protection against data breaches.
+                    </p>
+                    
+                    <p>
+                        7. Your Rights
+                        You have the right to request access, correction, or deletion of your personal data. Contact us for any data-related inquiries.
+                    </p>
+                    
+                    <p>
+                        8. Policy Updates
+                        We may update this privacy policy periodically. Please review it regularly for any changes.
+                        
+                    </p>
+                    <p>
+                        9. Contact Us
+                        If you have any questions or concerns about this policy, please reach out to our customer service team.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Add Bootstrap 5 CDN link in your head section -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+      <script>
+        document.getElementById('searchFilter').addEventListener('input', async function () {
+          const query = this.value.toLowerCase();
+          const dataList = document.getElementById('carSuggestions');
+
+          if (query.length < 2) {
+            dataList.innerHTML = ''; // Clear the list if query is too short
+            return;
+          }
+
+          try {
+            const response = await fetch(`/car-suggestions?term=${encodeURIComponent(query)}`);
+            const suggestions = await response.json();
+
+            // Clear existing suggestions
+            dataList.innerHTML = '';
+
+            // Populate datalist with new suggestions
+            suggestions.forEach(suggestion => {
+              const option = document.createElement('option');
+              option.value = suggestion; // Directly use the suggestion string
+              dataList.appendChild(option);
+            });
+          } catch (error) {
+            console.error("Error fetching suggestions:", error);
+          }
+        });
+      </script>
+
+
+
+</body>
+
+</html>

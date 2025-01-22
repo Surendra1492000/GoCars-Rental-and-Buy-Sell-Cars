@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoCars</title>
+    <!-- favicon -->
+    <link rel="icon" href="/CarRental/images/favicon.png" type="image/png">
+     <!-- SWIPER CSS -->
+      <link rel="stylesheet" href="CSS/swiper-bundle.min.css">
+
+    <!-- remix-icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- main-css -->
+    <link rel="stylesheet" href="CSS/CR.css">
+
+</head>
+
+<body>
+    <!-- Header-Section -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="" class="nav_logo">
+                <i class="ri-roadster-line"></i>
+                Go-Cars
+            </a>
+            <div class="nav_menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav_item">
+                        <a href="home.html" class="nav_link">Home</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="about.html" class="nav_link">About</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="popular.html" class="nav_link">Popular</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="products.html" class="nav_link">Products</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="app.html" class="nav_link download_link">Download</a>
+                    </li>
+                </ul>
+                <div class="nav_close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-2-line"></i>
+            </div>
+        </nav>
+    </header>
+    <!-- Main-Section -->
+    <main class="main">
+        <!-- All- other sections in it -->
+        <!--NEWSLETTER-SECTION-->
+        <section class="section newsletter__section">
+            <div class="container newsletter__contain">
+                <div class="newsletter__data">
+                    <h2 class="section__tittle">
+                        Do You Want to recieve special offer
+                    </h2>
+                    <p class="newsletter__descrip">
+                        Be the forst to receive all the information about new cars via email,by Simply subscribing to our mailing list.
+                    </p>
+                    <div class="newsletter__form">
+                        <input type="email" class="newsletter-ip" placeholder="Enter Your Email">
+                        <button class="newsletter-btn">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+           </section>
+           <!-- PRODUCTS -->
+            <section class="section products__section"id="products">
+                <span class="product_subtittle">Choose from the Best</span>
+                <h2 class="product_head">Featured Luxury Cars</h2>
+                <div class="container product__contain">
+                    <ul class="products_filters">
+                        <li>
+                            <button class="products__item active-product" data-filter="all">
+                                <span>All</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="products__item" data-filter=".tesla" aria-label="Tesla">
+                                <img src="image/Tesla Logo.png" alt="">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="products__item" data-filter=".benz" aria-label="Mercedes">
+                                <img src="image/Mercedes Logo.png" alt="">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="products__item" data-filter=".lambo" aria-label="Lamborghini">
+                                <img src="image/Lamborghini Logo.png" alt="">
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="products_content grid">
+                          <!-- Product car 1 -->
+                    <article class="popular__card product__card mix tesla" >
+                        <h3 class="car__name">Tesla</h3>
+                        <span class="car_model">Model Y</span>
+                        <div class="car-img">
+                               <img src="image/Tesla1.png" alt="A Tesla car">
+                        </div>
+                        <div class="car__details">
+                           <span class="speed">
+                               <img src="image/acceleration.png" alt="217km/h">
+                           </span>
+                           <div class="car-line"></div>
+                               <span class="year">2020</span>
+                               <div class="car-line"></div>
+                               <span class="price">$80,000</span>
+                        </div>
+                        <div class="car__btns">
+                           <a href="#" class="buy-btn">Buy</a>
+                           <a href="#" class="rent-btn">Rent</a>
+                        </div>
+                       </article>
+                          <!-- Product car 2 -->
+                    <article class="popular__card product__card mix tesla" >
+                        <h3 class="car__name">Tesla</h3>
+                        <span class="car_model">Model 3</span>
+                        <div class="car-img">
+                               <img src="image/2023-tesla-model-3.avif" alt="Tesla Model 2023">
+                        </div>
+                        <div class="car__details">
+                           <span class="speed">
+                               <img src="image/acceleration.png" alt="260km/h">
+                           </span>
+                           <div class="car-line"></div>
+                               <span class="year">2023</span>
+                               <div class="car-line"></div>
+                               <span class="price">$50,000</span>
+                        </div>
+                        <div class="car__btns">
+                           <a href="#" class="buy-btn">Buy</a>
+                           <a href="#" class="rent-btn">Rent</a>
+                        </div>
+                       </article>
+                          <!-- Product car 3 -->
+                    <article class="popular__card product__card mix tesla" >
+                        <h3 class="car__name">Tesla</h3>
+                        <span class="car_model">Cybertruck</span>
+                        <div class="car-img">
+                               <img src="image/2021-Tesla-Cybertruck.avif" alt="Tesla Cybertruck 2021">
+                        </div>
+                        <div class="car__details">
+                           <span class="speed">
+                               <img src="image/acceleration.png" alt="300km/h">
+                           </span>
+                           <div class="car-line"></div>
+                               <span class="year">2021</span>
+                               <div class="car-line"></div>
+                               <span class="price">$79,990</span>
+                        </div>
+                        <div class="car__btns">
+                           <a href="#" class="buy-btn">Buy</a>
+                           <a href="#" class="rent-btn">Rent</a>
+                        </div>
+                       </article>
+                       <!-- Product car 4 -->
+                    <article class="popular__card product__card mix tesla" >
+                        <h3 class="car__name">Tesla</h3>
+                        <span class="car_model">Model X 4WD</span>
+                        <div class="car-img">
+                               <img src="/images/2023-tesla-model-x-4wd.avif" alt="Tesla Model X 4WD 2023">
+                        </div>
+                        <div class="car__details">
+                           <span class="speed">
+                               <img src="/images/acceleration.png" alt="340km/h">
+                           </span>
+                           <div class="car-line"></div>
+                               <span class="year">2023</span>
+                               <div class="car-line"></div>
+                               <span class="price">$94,990</span>
+                        </div>
+                        <div class="car__btns">
+                           <a href="#" class="buy-btn">Buy</a>
+                           <a href="#" class="rent-btn">Rent</a>
+                        </div>
+                       </article>
+                       <!-- Mercedes-Benz -->
+                        <!-- PRODUCT CAR 5 -->
+                       <article class="popular__card product__card mix benz" >
+                        <h3 class="car__name">Mercedes-Benz</h3>
+                        <span class="car_model">S63 AMG</span>
+                        <div class="car-img">
+                               <img src="/images/Benz3.png" alt="Benz">
+                        </div>
+                        <div
+                        class="car__details">
+                           <span class="speed">
+                               <img src="/images/acceleration.png" alt="330 km/h"> 
+                           </span>
+                           <div class="car-line"></div>
+                           <span class="year">2020</span>
+                           <div class="car-line"></div>
+                           <span class="price">$280,000</span>                           
+                        </div>
+                        <div class="car__btns">
+                           <a href="#" class="buy-btn">Buy</a>
+                           <a href="#" class="rent-btn">Rent</a>
+                        </div>
+                       </article>
+                        <!-- PRODUCT CAR 6 -->
+                       <article class="popular__card product__card mix benz" >
+                        <h3 class="car__name">Mercedes-Benz</h3>
+                        <span class="car_model">C class C63 AMG</span>
+                        <div class="car-img">
+                               <img src="/images/Benz4.png" alt="Benz">
+                        </div>
+                        <div
+                        class="car__details">
+                           <span class="speed">
+                               <img src="/images/acceleration.png" alt="290 km/h"> 
+                           </span>
+                           <div class="car-line"></div>
+                           <span class="year">2021</span>
+                           <div class="car-line"></div>
+                           <span class="price">$220,000</span>                           
+                        </div>
+                        <div class="car__btns">
+                           <a href="#" class="buy-btn">Buy</a>
+                           <a href="#" class="rent-btn">Rent</a>
+                        </div>
+                       </article>
+                        <!-- PRODUCT CAR 7 -->
+                       <article class="popular__card product__card mix benz" >
+                        <h3 class="car__name">Mercedes-Benz</h3>
+                        <span class="car_model">G-series Gtr</span>
+                        <div class="car-img">
+                               <img src="/images/Benz1.png" alt="Benz">
+                        </div>
+                        <div
+                        class="car__details">
+                           <span class="speed">
+                               <img src="/images/acceleration.png" alt="350 km/h">
+                           </span>
+                           <div class="car-line"></div>
+                           <span class="year">2020</span>
+                           <div class="car-line"></div>
+                           <span class="price">$459,990</span>                           
+                        </div>
+                        <div class="car__btns">
+                           <a href="#" class="buy-btn">Buy</a>
+                           <a href="#" class="rent-btn">Rent</a>
+                        </div>
+                       </article>
+                        <!-- PRODUCT CAR 8 -->
+                       <article class="popular__card product__card mix benz" >
+                        <h3 class="car__name">Mercedes-Benz</h3>
+                        <span class="car_model">S63</span>
+                        <div class="car-img">
+                               <img src="/images/c-class-limosine.webp" alt="Limosine Class C">
+                        </div>
+                        <div
+                        class="car__details">
+                           <span class="speed">
+                               <img src="/images/acceleration.png" alt="246km/h">
+                           </span>
+                           <div class="car-line"></div>
+                           <span class="year">2024</span>
+                           <div class="car-line"></div>
+                           <span class="price">$69,650</span>                           
+                        </div>
+                        <div class="car__btns">
+                           <a href="#" class="buy-btn">Buy</a>
+                           <a href="#" class="rent-btn">Rent</a>
+                        </div>
+                       </article>
+                       <!-- LAMBORGHINI -->
+                        <!-- PRODUCT CAR 9 -->
+                        <article class="popular__card product__card mix lambo" >
+                            <h3 class="car__name">Lamborghini</h3>
+                            <span class="car_model">Huracan</span>
+                            <div class="car-img">
+                                   <img src="/images/Lambo1.png" alt="Lambo">
+                            </div>
+                            <div
+                            class="car__details">
+                               <span class="speed">
+                                   <img src="/images/acceleration.png" alt="320km/h">
+                               </span>
+                               <div class="car-line"> </div>
+                               <span class="year">2019</span>
+                               <div class="car-line"></div>
+                               <span class="price">$206,295</span>
+                            </div>
+                            <div class="car__btns">
+                               <a href="#" class="buy-btn">Buy</a>
+                               <a href="#" class="rent-btn">Rent</a>
+                            </div>
+                           </article>
+                           <!-- Products car 10-->
+                           <article class="popular__card product__card mix lambo" >
+                            <h3 class="car__name">Lamborghini</h3>
+                            <span class="car_model">Huracan Roadster</span>
+                            <div class="car-img">
+                                   <img src="/images/Lambo2.png" alt="Lambo">
+                            </div>
+                            <div
+                            class="car__details">
+                               <span class="speed">
+                                   <img src="/images/acceleration.png" alt="320km/h">
+                               </span>
+                               <div class="car-line"> </div>
+                               <span class="year">2020</span>
+                               <div class="car-line"></div>
+                               <span class="price">$260,295</span>
+                            </div>
+                            <div class="car__btns">
+                               <a href="#" class="buy-btn">Buy</a>
+                               <a href="#" class="rent-btn">Rent</a>
+                            </div>
+                           </article>
+                           <!-- Products car 11-->
+                           <article class="popular__card product__card mix lambo" >
+                            <h3 class="car__name">Lamborghini</h3>
+                            <span class="car_model">Aventador</span>
+                            <div class="car-img">
+                                   <img src="/images/aventador.png" alt="Aventador">
+                            </div>
+                            <div
+                            class="car__details">
+                               <span class="speed">
+                                   <img src="/images/acceleration.png" alt="350km/h">
+                               </span>
+                               <div class="car-line"> </div>
+                               <span class="year">2022</span>
+                               <div class="car-line"></div>
+                               <span class="price">$650,000</span>
+                            </div>
+                            <div class="car__btns">
+                               <a href="#" class="buy-btn">Buy</a>
+                               <a href="#" class="rent-btn">Rent</a>
+                            </div>
+                           </article>
+                           <!-- Products car 12 -->
+                           <article class="popular__card product__card mix lambo" >
+                            <h3 class="car__name">Lamborghini</h3>
+                            <span class="car_model">Revuelto</span>
+                            <div class="car-img">
+                                   <img src="/images/Revuelto_Exterior_Beauty_09.jpeg" alt="Revuelto Exterior Beauty 09">
+                            </div>
+                            <div
+                            class="car__details">
+                               <span class="speed">
+                                   <img src="/images/acceleration.png" alt="390km/h">
+                               </span>
+                               <div class="car-line"> </div>
+                               <span class="year">2024</span>
+                               <div class="car-line"></div>
+                               <span class="price">$700,000</span>
+                            </div>
+                            <div class="car__btns">
+                               <a href="#" class="buy-btn">Buy</a>
+                               <a href="#" class="rent-btn">Rent</a>
+                            </div>
+                           </article>
+
+                    </div>
+                </div>
+
+            </section>
+    </main>
+    <!-- Scroll-Up Button -->
+     <a href="#" class="scrollup" id="scroll-up">Scroll-Up
+        <i class="ri-arrow-up-line"></i>
+     </a>
+     <!--Scroll-Reveal-Js-->
+     <script src="Js/scrollreveal.min.js"></script>
+    <!-- SWIPER JS -->
+     <script src="Js/swiper-bundle.min.js"></script>
+       <!-- MIXITUP-JS -->
+       <script src="Js/mixitup.min.js"></script>
+    <!-- Java-script Sections Below -->
+    <script src="Js/car.js"></script>
+</body>
+
+</html>
