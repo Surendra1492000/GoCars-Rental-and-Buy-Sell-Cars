@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoCars</title>
+    <link rel="icon" href="/CarRental/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/frontend/CSS/renting_payment.css">
+    <link rel="stylesheet" href="CSS/CR.css">
+</head>
+
+<body>
+    <!-- Header-Section -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="" class="nav_logo">
+                <i class="ri-roadster-line"></i>
+                Go-Cars
+            </a>
+            <div class="nav_menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav_item">
+                        <a href="home.html" class="nav_link">Home</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="about.html" class="nav_link">About</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="popular.html" class="nav_link">Popular</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="products.html" class="nav_link">Products</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="app.html" class="nav_link download_link">Download</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#" class="nav_link">Login/Signup</a>
+                    </li>
+                    
+                </ul>
+                <div class="nav_close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+                </div>
+
+                <div class="user-id-btn">
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                    <span class="user-id"></span>
+                </div>
+                <div class="user-dropdown">
+                    <ul>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-2-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="selected-car">
+            <!-- <h2>Your Selected Car</h2> -->
+            <div class="car-details">
+                <img src="car_selected.jpg" alt="Selected Car">
+                <div class="car-info">
+                    <h3>Car Model: <span id="car-model">Car Model A</span></h3>
+                    <p>Price per Day: <span id="car-price">$50</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="rental-details">
+            <h2>Rental Details</h2>
+            <form id="rental-form">
+                <label for="pickup-date">Pickup Date:</label>
+                <input type="date" id="pickup-date" required>
+
+                <label for="return-date">Return Date:</label>
+                <input type="date" id="return-date" required>
+            </form>
+        </section>
+
+        <section class="payment">
+            <h2>Payment</h2>
+            <form id="payment-form">
+                <label for="card-holder">Cardholder Name:</label>
+                <input type="text" id="card-holder" required>
+
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" maxlength="16" required>
+
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="month" id="expiry-date" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" maxlength="3" required>
+
+                <button type="submit" class="pay-btn">Pay Now</button>
+            </form>
+        </section>
+    </main>
+    <!-- FOOTER-SECTION -->
+    <footer class="footer section">
+        <div class="container footer_contain">
+            <div class="footer-data grid">
+                <div class="logo-info footer-box"> <a href="" class="nav_logo">
+                    <i class="ri-roadster-line"></i>
+                    GoCars
+                </a>
+                <p class="footer-desc">
+                    GoCars is a luxury car rental and sales company that offers a wide range of high-end vehicles for
+                </p>
+                </div>
+                <div class="information footer-box">
+                    <h3 class="footer__tittle">Information</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="company footer-box">
+                    <h3 class="footer__tittle">Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="Contact Us.html">Contact-us</a></li>
+                        <li><a href="#">GoCars Media</a></li>
+                    </ul>
+                </div>
+                <div class="socials footer-box">
+                    <h3 class="footer__tittle">Follow Us On</h3>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/vividh-jain"><i class="ri-linkedin-box-fill"></i>Linkedin</a></li>
+                        <li><a href="https://www.instagram.com/"><i class="ri-instagram-fill"></i>Instagram</a></li>
+                        <li><a href="https://x.com/"><i class="ri-twitter-fill"></i>Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="footer-line"></div>
+                <small>&copy; JustPrefect. All rights reserved.</small>
+            </div>
+        </div>
+      </footer>
+
+    <script src="/frontend/Js/renting_payment.js"></script>
+    <script src="Js/car.js"></script>
+</body>
+
+</html>

@@ -1,227 +1,102 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
 
-/*front -face*/
-@font-face {
-	font-family: Berliana;
-	src: url(/CarRental/fonts/Berliana\ Lovely.otf);
-}
-
-/*---------------Css-Variables-----------------*/
-:root{
-    --header-height:3.5rem;
-    /*Colors*/
-    --first-color: #f2d41e;
-    --first-color-alt: #f2a81e;
-    --tittle-color:#fafafa;
-    --text-color:#a7abb4;
-    --white-color:#fff;
-    --body-color:#01000a;
-    --container-color:#253854;
-    /*--------Font & Typography----------*/
-    --text-font:"Poppins",sans-serif;
-    --tittle-font:"Ubuntu",sans-serif;
-    --biggest-font-size:2rem;
-    --h1-font-size:1.5rem;
-    --h2-font-size:1.25rem;
-    --h3-font-size:1rem;
-    --normal-font-size:0.938rem;
-    /*---Font-Weight----*/
-    --font-lighter:300;
-    --font-light:400;
-    --font-medium:500;
-    --font-semi-bold:600;
-    /*-----Z-Index-------*/
-    --z-tooltip:10;
-    --z-fixed:100;
-}
-
-/*========Responsive-Typography=========*/
-@media screen and (max-width: 968px) {
-    :root {
-        --h1-font-size:2.25rem;
-        --h2-font-size:1.5rem;
-        --h3-font-size:1.25rem;
-        --normal-font-size:1rem;
-        --small-font-size:.875rem;
-        --smaller-font-size:.813rem;
-    }
-}
-
-/* Reset and Global Styles */
-/* body, h1, h2, p {
-    margin: 0;
+* {
+    margin: auto;
     padding: 0;
-    font-family: Arial, sans-serif;
-} */
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
 body {
-    line-height: 1.6;
-    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-/* header {
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* right: 0;
+    bottom: 0; */
+    width: 100%;
+    padding: 20px 100px;
+    background: rgb(5, 37, 125);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background-color: #4CAF50;
-    color: white;
-} */
-
-/* .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-} */
-
-.nav-links ul {
-    display: flex;
-    list-style: none;
+    z-index: 99;
 }
 
-.nav-links ul li {
-    margin-left: 1rem;
+/* .logo{
+    align-items: left;
+    justify-content: left;
+    font-size: 2rem;
+    color: #fff;
+    user-select: none;
 }
 
-.nav-links ul li a {
-    color: white;
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    margin-left: 40px;
 }
 
-.nav-links ul li a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding: 1rem;
-    text-align: center;
-}
-
-.hero {
-    background: #4CAF50;
-    color: white;
-    padding: 4rem 1rem;
-    border-radius: 10px;
-    margin: 1rem;
-}
-
-.hero button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    color: white;
-    background: #333;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.hero button:hover {
-    background: #555;
-}
-
-.auth-page {
-    margin: 2rem auto;
-    max-width: 400px;
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form label {
-    margin-bottom: 0.5rem;
-    text-align: left;
-}
-
-form input {
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    padding: 0.5rem;
-    font-size: 1rem;
-    background: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background: #45a049;
-}
-
-/* footer {
-    text-align: center;
-    padding: 1rem 0;
-    background: #333;
-    color: white;
-    margin-top: 2rem;
-} */
-/* Booking Page */
-.booking-page {
-    margin: 2rem auto;
-    max-width: 500px;
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.booking-page h2 {
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-}
-
-form label {
-    margin-bottom: 0.5rem;
-    text-align: left;
-    font-weight: bold;
-}
-
-form input {
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    padding: 0.7rem;
-    font-size: 1rem;
-    background: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background: #45a049;
-}
-
-#map {
+.navigation a::after{ */
+    /* content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
     width: 100%;
-    height: 300px;
-    border-radius: 10px;
-    margin-top: 1rem;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s; */
+
+    /* left: auto;
+    right: 0;
+    width: 0%;
+    transform: scaleX(0);
 }
 
-.header{
+.navigation a:hover::after{ */
+    /* transform-origin: left;
+    transform: scaleX(1); */
+
+    /* width: 100%;
+    transform-origin: left;
+}*/
+
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover{
+    background: #fff;
+    color: #000;
+}
+
+/* .header{
     width: 100%;
     background-color: transparent;
     position: fixed;
@@ -230,11 +105,293 @@ form button:hover {
     z-index: var(--z-fixed);
     border-bottom: 1px solid rgba(109, 109, 109, 0.4);
     transition: 0.3s;
+} */
+.nav{
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--tittle-font);
+    
+}
+.nav_logo,.nav__toggle{
+    color: var(--tittle-color);
+    display: inline-flex;
+}
+.nav_logo{
+    align-items: center;
+    column-gap: 0.25rem ;
+    font-weight: var(--font-medium);
+    transition: 0.3s;
+}
+.nav_logo i{
+    color: var(--first-color-alt);
+    font-size: 1.25rem;;
+}
+.nav_logo:hover{
+    color: var(--first-color);
+}
+.nav__toggle{
+    font-size: 1.25rem;
+    /* color:var(--tittle-color); */
+    cursor: pointer;
 }
 
-/* change background */
-.scroll-header{
-    background-color:var(--body-color);
+
+
+/* .wrapper {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(249, 100, 100, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease;
+    transition: height .2s ease;
+} */
+
+.wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 400px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+    visibility: hidden;
+    transition: transform 0.5s ease, visibility 0.3s ease;
+}
+
+/* .wrapper .active-popup {
+    transform: scale(1);
+} */
+
+.wrapper.active-popup {
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+}
+
+.wrapper .active {
+    height: 520px;
+    /* align-items: center; */
+
+    transform: scale(1);
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+    /* padding-top: 2px; */
+    /* padding-bottom: 100px; */
+}
+
+.wrapper .form-box .login {
+    /* display: none; */
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper .active .form-box .login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box .register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper .active .form-box .register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+/* Forgot Password Form Styling */
+.form-box.forgot-password {
+    position: absolute;
+    transition: transform 0.18s ease;
+    transform: translateX(400px); /* Hidden initially */
+}
+
+.wrapper .active-forgot .form-box.forgot-password {
+    transition: transform 0.18s ease;
+    transform: translateX(0); /* Shown when active */
+}
+
+.wrapper .active-forgot .form-box.login,
+.wrapper .active-forgot .form-box.register {
+    transform: translateX(-400px); /* Hide other forms */
+}
+
+
+/* .wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #162938;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+} */
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #162938;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.form-box {
+    width: 100%;
+    padding: 40px;
+    display: none; /* Hide forms by default */
+}
+
+.form-box.active {
+    display: block; /* Show the active form */
+}
+
+.form-box h2 {
+    font-size: 2em;
+    font-style: normal;
+    color: #202899;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -10px;
+
+    font-size: 0.85rem;
+    color: #126398;
+
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #162938;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2rem;
+    color: #162938;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #162938;
+    margin-right: 2px;
+}
+
+.remember-forgot a {
+    color: #3b12f0;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 40%;
+    height: 40px;
+    background: #126398;
+    border: #080a89;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.login-register {
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: #4015c1;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
 }
 
 /* Footer-Section */
@@ -297,11 +454,4 @@ form button:hover {
 .copyright small{
     text-align: center;
     display: block;
-}
-
-@media screen and (min-width:1040px) {
-    .footer-data{
-        grid-template-columns: repeat(4,max-content);
-        justify-content: space-between;
-    }
 }
